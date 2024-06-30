@@ -5,6 +5,8 @@ version: 5.2.4
 api-version: 1.16
 main: dev.efnilite.ip.IP
 softdepend: [floodgate, Vault, PlaceholderAPI, Multiverse-Core, VoidGen]
+authors:
+    - just_l0fe
 commands:
     witp:
         aliases: [parkour, ip]

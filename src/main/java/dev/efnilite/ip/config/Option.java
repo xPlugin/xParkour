@@ -120,21 +120,15 @@ public class Option {
     }
 
     public static ParticleShape PARTICLE_SHAPE;
-    public static Sound SOUND_TYPE;
+    public static String SOUND_TYPE;
     public static int SOUND_PITCH;
     public static int SOUND_VOLUME;
     public static Particle PARTICLE_TYPE;
     public static ParticleData<?> PARTICLE_DATA;
 
     private static void initEnums() {
-        String value = Config.CONFIG.getString("particles.sound-type").toUpperCase();
-
-        try {
-            SOUND_TYPE = Sound.valueOf(value);
-        } catch (IllegalArgumentException ex) {
-            SOUND_TYPE = Sound.valueOf("BLOCK_NOTE_PLING");
-            IP.logging().error("Invalid sound: %s".formatted(value));
-        }
+        String value = Config.CONFIG.getString("particles.sound-type");
+        SOUND_TYPE = value;
 
         value = Config.CONFIG.getString("particles.particle-type");
         try {
